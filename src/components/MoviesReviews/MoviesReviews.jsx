@@ -13,7 +13,7 @@ export const MoviesReviews = () => {
     useEffect(() => {
         const controller = new AbortController();
 
-        async function getQuiz() {
+        async function getMovies() {
             try {
                 setLoading(true);
                 const fetchedMovies = await fetchMoviesByIdReviews(params.movieId, controller);
@@ -28,12 +28,12 @@ export const MoviesReviews = () => {
             }
         }
 
-        getQuiz();
+        getMovies();
 
         return () => {
             controller.abort();
         };
-    }, [params.quizId]);
+    }, [params.movieId]);
 
     const reviewsList = reviews.results;
 

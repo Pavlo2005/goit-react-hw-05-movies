@@ -16,7 +16,7 @@ export default function QuizzesPage() {
     const [search, setSearch] = useState(params.get('search') ?? '');
 
     useEffect(() => {
-        async function getQuizzes() {
+        async function getMovies() {
             try {
                 setLoading(true);
                 setError(false);
@@ -31,7 +31,7 @@ export default function QuizzesPage() {
         }
 
         if (search !== '') {
-            getQuizzes();
+            getMovies();
         }
     }, [search]);
 

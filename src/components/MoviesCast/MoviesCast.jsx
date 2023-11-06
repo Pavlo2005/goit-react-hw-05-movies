@@ -13,7 +13,7 @@ export const MoviesCast = () => {
     useEffect(() => {
         const controller = new AbortController();
 
-        async function getQuiz() {
+        async function getMovies() {
             try {
                 setLoading(true);
                 const fetchedMovies = await fetchMoviesByIdCast(params.movieId, controller);
@@ -28,12 +28,12 @@ export const MoviesCast = () => {
             }
         }
 
-        getQuiz();
+        getMovies();
 
         return () => {
             controller.abort();
         };
-    }, [params.quizId]);
+    }, [params.movieId]);
 
     const castList = cast.cast;
 

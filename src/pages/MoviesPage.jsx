@@ -3,7 +3,7 @@ import { BackLink } from 'components/BackLink/BackLink';
 import { MoviesInfo } from 'components/MoviesInfo/MoviesInfo';
 import { MoviesPersonalPage } from 'components/MoviesPersonalPage/MoviesPersonalPage';
 import { useEffect, useState } from 'react';
-import { useLocation, useParams, useSearchParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 export default function QuizDetailsPage() {
     const location = useLocation();
@@ -11,19 +11,19 @@ export default function QuizDetailsPage() {
     const [movies, setMovies] = useState();
 
     useEffect(() => {
-        async function getQuiz() {
+        async function getMovies() {
             try {
                 const fetchedMovies = await fetchMoviesById(params.movieId);
                 setMovies(fetchedMovies);
             } catch (error) { }
         }
 
-        getQuiz();
-    }, [params.quizId]);
+        getMovies();
+    }, [params.movieId]);
 
     return (
         <div>
-            <h1>QuizDetailsPage</h1>
+            <h1>MoviesDetailsPage</h1>
 
             <BackLink to={location.state?.from ?? '/movies'}>
                 Back to Search
