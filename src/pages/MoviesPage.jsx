@@ -25,7 +25,7 @@ export default function QuizDetailsPage() {
         <div>
             <h1>MoviesDetailsPage</h1>
 
-            <BackLink to={location.state?.from ?? '/movies'}>
+            <BackLink to={location.state?.from ?? '/'}>
                 Back to Search
             </BackLink>
 
