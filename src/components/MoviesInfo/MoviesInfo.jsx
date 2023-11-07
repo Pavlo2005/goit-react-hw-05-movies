@@ -6,17 +6,13 @@ export const MoviesInfo = () => {
     const { cast, reviews, changeCast, changeReviews } = useInfo();
     return (
         <div>
+            <button onClick={() => changeCast()}> Cast </button>
+            <button onClick={() => changeReviews()}> Reviews </button>
             <div>
-                <button onClick={() => changeCast()}> Cast </button>
                 {cast && <MoviesCast></MoviesCast>}
             </div>
             <div>
-                <button onClick={() => changeReviews()}> Reviews </button>
-                {reviews &&
-                    <div>
-                        <MoviesReviews></MoviesReviews>
-                    </div>
-                }
+                {reviews && <MoviesReviews></MoviesReviews>}
             </div>
         </div>
     );
